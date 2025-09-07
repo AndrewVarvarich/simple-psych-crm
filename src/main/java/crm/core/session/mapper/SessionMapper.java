@@ -1,7 +1,7 @@
-package crm.core.Session.mapper;
+package crm.core.session.mapper;
 
-import crm.core.Session.dto.SessionDto;
-import crm.core.Session.model.Session;
+import crm.core.session.dto.SessionDto;
+import crm.core.session.model.Session;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

@@ -8,6 +8,9 @@ import jakarta.validation.constraints.Pattern;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
@@ -16,7 +19,9 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode
 @Entity
 @Table(name = "clients")
+@EntityListeners(AuditingEntityListener.class)
 public class Client {
+
     @Id
     private Long id;
 
@@ -36,8 +41,10 @@ public class Client {
 
     private String notes;
 
+    @CreatedDate
     private LocalDateTime createdAt;
 
+    @LastModifiedDate
     private LocalDateTime updatedAt;
 
 }

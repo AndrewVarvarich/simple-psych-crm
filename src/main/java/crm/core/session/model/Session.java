@@ -1,4 +1,4 @@
-package crm.core.Session.model;
+package crm.core.session.model;
 
 import crm.core.client.model.Client;
 import jakarta.persistence.Entity;
@@ -9,7 +9,7 @@ import jakarta.validation.constraints.FutureOrPresent;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import crm.core.Session.dto.Status;
+import crm.core.session.dto.Status;
 
 import java.time.LocalDateTime;
 

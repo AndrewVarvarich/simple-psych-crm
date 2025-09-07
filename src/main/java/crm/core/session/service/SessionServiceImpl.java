@@ -1,9 +1,9 @@
-package crm.core.Session.service;
+package crm.core.session.service;
 
-import crm.core.Session.dto.SessionDto;
-import crm.core.Session.mapper.SessionMapper;
-import crm.core.Session.model.Session;
-import crm.core.Session.repositories.SessionRepository;
+import crm.core.session.dto.SessionDto;
+import crm.core.session.mapper.SessionMapper;
+import crm.core.session.model.Session;
+import crm.core.session.repositories.SessionRepository;
 import crm.core.client.repositories.ClientRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

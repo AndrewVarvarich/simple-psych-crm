@@ -1,4 +1,4 @@
-package crm.core.Session.dto;
+package crm.core.session.dto;
 
 public enum Status {
     PLANNED,

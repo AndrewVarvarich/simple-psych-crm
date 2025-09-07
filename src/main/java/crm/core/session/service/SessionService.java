@@ -1,7 +1,7 @@
-package crm.core.Session.service;
+package crm.core.session.service;
 
-import crm.core.Session.dto.SessionDto;
-import crm.core.Session.model.Session;
+import crm.core.session.dto.SessionDto;
+import crm.core.session.model.Session;
 
 public interface SessionService {
 

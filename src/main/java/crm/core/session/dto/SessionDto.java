@@ -1,4 +1,4 @@
-package crm.core.Session.dto;
+package crm.core.session.dto;
 
 import crm.core.client.model.Client;
 import lombok.Getter;
