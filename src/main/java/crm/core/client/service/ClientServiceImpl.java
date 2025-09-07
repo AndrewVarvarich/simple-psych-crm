@@ -5,7 +5,7 @@ import crm.core.exception.ConflictException;
 import crm.core.client.mapper.ClientMapper;
 import crm.core.client.model.Client;
 import crm.core.client.repositories.ClientRepository;
-import crm.core.exception.UserNotFoundException;
+import crm.core.exception.ClientNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -43,7 +43,7 @@ public class ClientServiceImpl implements ClientService {
     public void deleteClient(Long id) {
         log.info("Deleting client with id {}", id);
         clientRepository.findById(id).orElseThrow(() ->
-                new UserNotFoundException("Client with id " + id + " not found")
+                new ClientNotFoundException("Client with id " + id + " not found")
         );
         clientRepository.deleteById(id);
         log.info("Client with id {} successfully deleted", id);
@@ -54,7 +54,7 @@ public class ClientServiceImpl implements ClientService {
     public Client updateClient(Long id, ClientDto client) {
         log.info("Updating client with id {}", id);
         Client existingClient = clientRepository.findById(id).orElseThrow(() ->
-                new UserNotFoundException("Client with id " + id + " not found"));
+                new ClientNotFoundException("Client with id " + id + " not found"));
         if (client.getEmail() != null) {
             if (clientRepository.findByEmail(client.getEmail()).isPresent()) {
                 throw new ConflictException("Client with email " + client.getEmail() + " already exists");
@@ -79,7 +79,7 @@ public class ClientServiceImpl implements ClientService {
     public Client getClient(Long id) {
         log.info("Getting client with id {}", id);
         return clientRepository.findById(id).orElseThrow(() ->
-                new UserNotFoundException("Client with id " + id + " not found"));
+                new ClientNotFoundException("Client with id " + id + " not found"));
     }
 
     @Override

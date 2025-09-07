@@ -51,7 +51,7 @@ public class ClientController {
      *
      * @param clientId идентификатор клиента
      * @return объект {@link ClientDto} с данными клиента
-     * @throws crm.core.exception.UserNotFoundException если клиент с указанным ID не найден
+     * @throws crm.core.exception.ClientNotFoundException если клиент с указанным ID не найден
      */
     @GetMapping("/{id}")
     public ClientDto getClient(@PathVariable final Long clientId) {
@@ -82,7 +82,7 @@ public class ClientController {
      * @param clientId  идентификатор клиента для обновления
      * @param clientDto новые данные клиента (валидируются аннотациями)
      * @return обновлённый объект {@link Client}
-     * @throws crm.core.exception.UserNotFoundException если клиент не найден
+     * @throws crm.core.exception.ClientNotFoundException если клиент не найден
      * @throws jakarta.validation.ConstraintViolationException если данные не прошли валидацию
      * @throws crm.core.exception.ConflictException если клиент с таким email уже существует
      */
@@ -96,7 +96,7 @@ public class ClientController {
      * Удаляет клиента по его идентификатору.
      *
      * @param clientId идентификатор клиента для удаления
-     * @throws crm.core.exception.UserNotFoundException если клиент не найден
+     * @throws crm.core.exception.ClientNotFoundException если клиент не найден
      */
     @DeleteMapping("/{id}")
     public void deleteClient(@PathVariable final Long clientId) {

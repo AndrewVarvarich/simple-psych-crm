@@ -14,7 +14,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public Map<String, String> handleNotFoundException(UserNotFoundException e) {
+    public Map<String, String> handleNotFoundException(ClientNotFoundException e) {
         log.error("Ошибка поиска: {}", e.getMessage());
         return Map.of(
                 "error", "Ошибка поиска",
